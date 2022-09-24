@@ -2,6 +2,10 @@
 
 Summarizes tweets collected using the Twitter API with the help of OpenAI API 
 
+## Project Information 
+
+Project for HackRice 12
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
