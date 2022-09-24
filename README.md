@@ -1,6 +1,6 @@
 ## Tweetivism
 
-Summarizes tweets from Twitter API with the help of OpenAI Api
+Summarizes tweets collected using the Twitter API with the help of OpenAI API 
 
 ## Getting Started
 
