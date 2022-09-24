@@ -1,4 +1,4 @@
-# activism
+## Tweetivism
 
 Summarizes tweets from Twitter API with the help of OpenAI Api
 
