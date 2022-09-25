@@ -25,7 +25,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   TextEditingController searchController = TextEditingController();
   String openAIResult = "";
+  String openAITweets = "";
   bool isLoading = false;
+  List<String> tweetsList = [];
+  Set<String> tweetsSet = {};
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.all(20),
           child: ListView(
             children: [
-              // Text("Hello World"),
+
+              SizedBox(height: 20),
+
+              Center(child: Text("Tweetivism", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
+
+              SizedBox(height: 20),
 
               TextField(
                 decoration: InputDecoration(
@@ -53,12 +61,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   setState(() {
                     isLoading = true;
                   });
-                  String result = await openAIData(searchController.text);
+                  tweetsList = await TwitterApiData(searchController.text);
+                  tweetsSet.addAll(tweetsList);
+
+                  for(int i=0; i<tweetsSet.length; i++){
+                    openAITweets += "Tweet: ";
+                    openAITweets += tweetsSet.elementAt(i);
+                    openAITweets += "\n";
+                    if(openAITweets.length > 500)
+                      break;
+                  }
+                  openAITweets += "Summarize about ${searchController.text} from the tweets";
+                  String result = await openAIData(openAITweets);
                   setState(() {
                     isLoading = false;
                     openAIResult = result;
                   });
-                  TwitterApiData(searchController.text);
                 },
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -73,7 +91,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
+              SizedBox(height: 30),
+
+              openAIResult == "" ? Container() : Center(child: Text("Short Summary", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+
               Text(openAIResult),
+
+              SizedBox(height: 30),
+
+              tweetsSet.length == 0 ? Container() : Center(child: Text("Popular Tweets", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
+
+              SizedBox(height: 20),
+
+              for(int i=0; i<tweetsSet.length && i<10; i++)
+                Text(tweetsSet.elementAt(i)+"\n"),
 
             ],
           ),

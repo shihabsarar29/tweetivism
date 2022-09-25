@@ -23,7 +23,7 @@ Future<String> openAIData(String searchData) async {
 
     final Map<String, String> headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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',
+      'Authorization': 'Bearer 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',
     };
 
     http.Response response = await http.post(
@@ -32,7 +32,7 @@ Future<String> openAIData(String searchData) async {
       body: json.encode(apiBody),
     );
 
-    // print('Received OpenAI API response: ${response.body}');
+    print('Received OpenAI API response: ${response.body}');
 
     if (response.statusCode == 200) {
       final result = json.decode(response.body);

@@ -1,7 +1,9 @@
 import 'package:twitter_api_v2/twitter_api_v2.dart' as v2;
 
 
-Future<void> TwitterApiData(String twitterSearch) async {
+Future<List<String>> TwitterApiData(String twitterSearch) async {
+
+  List<String> tweetsList = [];
 
 
   final twitter = v2.TwitterApi(
@@ -16,9 +18,14 @@ Future<void> TwitterApiData(String twitterSearch) async {
 
   final tweets = await twitter.tweetsService.searchRecent(
     query: twitterSearch,
-    maxResults: 20,
+    maxResults: 100,
   );
 
-  print(tweets.data[0].text);
+
+  for(int i = 0; i < tweets.data.length; i++){
+    tweetsList.add(tweets.data[i].text);
+  }
+
+  return tweetsList;
 
 }
