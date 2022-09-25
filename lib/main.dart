@@ -105,7 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
               for(int i=0; i<tweetsSet.length && i<10; i++)
                 Text(tweetsSet.elementAt(i)+"\n"),
-
             ],
           ),
         ),
