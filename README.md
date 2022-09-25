@@ -1,6 +1,10 @@
-# activism
+## Tweetivism
 
-Summarizes tweets from Twitter API with the help of OpenAI Api
+Summarizes tweets collected using the Twitter API with the help of OpenAI API 
+
+## Project Information 
+
+Project for HackRice 12
 
 ## Getting Started
 
