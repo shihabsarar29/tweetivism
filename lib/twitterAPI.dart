@@ -7,12 +7,12 @@ Future<List<String>> TwitterApiData(String twitterSearch) async {
 
 
   final twitter = v2.TwitterApi(
-    bearerToken: 'AAAAAAAAAAAAAAAAAAAAAODIhQEAAAAA%2BlRdcOXVM2M6ug%2BVdi1F%2FfFUr5k%3Dmn1NPbcpZzKh97Xfd9E02lXub0RGLnmFutNF37wcRcYQaxJkbm',
+    bearerToken: '',
     oauthTokens: v2.OAuthTokens(
-      consumerKey: 'ywrubwrvhPDyBEuX78Jzd6R4E',
-      consumerSecret: 'XviH7JC7IrrDBloQ84eBLhvVFrwISkD43OFzgkNTGF4jvJYOqY',
-      accessToken: '1573543285313904640-9NNa9h0o5CNITOQEa2Fs7BaeV0lFRr',
-      accessTokenSecret: 'SYZtozNjojPFMshPzyetwkeAl7O66UxFSQwkpO4MAA4GS',
+      consumerKey: '',
+      consumerSecret: '',
+      accessToken: '',
+      accessTokenSecret: '',
     ),
   );
 
