@@ -23,7 +23,7 @@ Future<String> openAIData(String searchData) async {
 
     final Map<String, String> headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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',
+      'Authorization': '',   // Add the OpenAI key here
     };
 
     http.Response response = await http.post(
