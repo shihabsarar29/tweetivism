@@ -5,7 +5,7 @@ Future<List<String>> TwitterApiData(String twitterSearch) async {
 
   List<String> tweetsList = [];
 
-
+  // Add the twitter API keys here
   final twitter = v2.TwitterApi(
     bearerToken: '',
     oauthTokens: v2.OAuthTokens(
